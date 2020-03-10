@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Picker</title>
+    <style media="screen">
+      html, body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input {
+        font-size: 3rem;
+        margin: 0.5em 0;
+        text-align: center;
+      }
+
+      input[readonly] {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: rgba(0, 0, 0, 0.8);
+        border-radius: 0.5em;
+        border: none;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="color" id="colorInput" onchange="updateColor()">
+    <input type="text" id="colorDisplay" readonly>
+
+    <script type="text/javascript">
+      function updateColor() {
+        colorDisplay.value = colorInput.value;
+        document.body.style.backgroundColor = colorInput.value;
+      }
+      updateColor();
+    </script>
+  </body>
+</html>
